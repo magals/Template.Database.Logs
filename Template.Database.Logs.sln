@@ -5,6 +5,8 @@ VisualStudioVersion = 17.4.33110.190
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Template.Database.Logs", "Template.Database.Logs\Template.Database.Logs.csproj", "{829105DB-AAE8-4EA6-A181-4098D7B1B742}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebCallMigrations", "WebCallMigrations\WebCallMigrations.csproj", "{C5FD7D38-C819-4C0B-84C0-FF852C6C6797}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{829105DB-AAE8-4EA6-A181-4098D7B1B742}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{829105DB-AAE8-4EA6-A181-4098D7B1B742}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{829105DB-AAE8-4EA6-A181-4098D7B1B742}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C5FD7D38-C819-4C0B-84C0-FF852C6C6797}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5FD7D38-C819-4C0B-84C0-FF852C6C6797}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5FD7D38-C819-4C0B-84C0-FF852C6C6797}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5FD7D38-C819-4C0B-84C0-FF852C6C6797}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

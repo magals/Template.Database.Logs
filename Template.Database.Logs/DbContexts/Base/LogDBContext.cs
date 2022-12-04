@@ -1,15 +1,21 @@
 ﻿
 
+using Microsoft.Extensions.Configuration;
+using System.Reflection;
+using Template.Database.Logs.DbContexts.MSSQL;
+
 namespace Template.Database.Logs.DbContexts.Base
 {
 
-	public class LogDBContext : DbContext
+	public abstract class LogDBContext : DbContext
 	{
 		public DbSet<LogMessageEntity>? LogMessageEntity { get; set; }
 
-		public LogDBContext(DbContextOptions<LogDBContext> options)
-				: base(options)
+		protected readonly IConfiguration Configuration;
+
+		protected LogDBContext(IConfiguration configuration)
 		{
+			Configuration = configuration;
 		}
 
 		protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -28,6 +34,28 @@ namespace Template.Database.Logs.DbContexts.Base
 				});
 			});
 		}
+
+		//protected void ApplyConfiguration(ModelBuilder modelBuilder, string[] namespaces)
+		//{
+		//	var methodInfo = (typeof(ModelBuilder).GetMethods()).Single((e =>
+		//			e.Name == "ApplyConfiguration" &&
+		//			e.ContainsGenericParameters &&
+		//			e.GetParameters().SingleOrDefault()?.ParameterType.GetGenericTypeDefinition() == typeof(IEntityTypeConfiguration<>)));
+
+		//	foreach (var configType in typeof(LogDBContext_MSSQL).GetTypeInfo().Assembly.GetTypes()
+
+		//			.Where(t => t.Namespace != null &&
+		//									namespaces.Any(n => n == t.Namespace) &&
+		//									t.GetInterfaces().Any(i => i.IsGenericType &&
+		//																						 i.GetGenericTypeDefinition() == typeof(IEntityTypeConfiguration<>))))
+		//	{
+		//		var type = configType.GetInterfaces().First();
+		//		methodInfo.MakeGenericMethod(type.GenericTypeArguments[0]).Invoke(modelBuilder, new[]
+		//		{
+		//				Activator.CreateInstance(configType)
+		//		});
+		//	}
+		//}
 
 	}
 }
